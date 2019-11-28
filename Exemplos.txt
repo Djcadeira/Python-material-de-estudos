@@ -1,10 +1,18 @@
-janela = Tk() #Principal
-Janela.title('') #renomeia a janela
-janela["bg"]ou["background"] = "green"
-janela.geometry("300x300+") #largura x Altura + lX + tY os valores sao pixels
+Tkinter é uma interface grafica do Python.
+O primeiro passo é importar a biblioteca: from tkinter import *
+para iniciar uma janela basta criar uma instancia para relacionar a janela depois fechar o loop.
+root = Tk()
+mainloop()
+O modulo tkinter é muito bem documentado todas as sintaxes podem ser encontradas em: https://effbot.org/tkinterbook/tkinter-index.htm
+
+#===========================================
+root = Tk() #Principal
+root.title('') #renomeia a janela
+root["bg"]ou["background"] = "green"
+root.geometry("300x300+") #largura x Altura + lX + tY os valores sao pixels
 
 
-Janela.mainloop() #Enquanto janela estiver sendo exibida.
+root.mainloop() #Enquanto janela estiver sendo exibida.
 #===========================================
 
 place == Lugar #Plano cartesiano
@@ -20,7 +28,7 @@ mainloop()
 bt = Button (container, width= , command= )
 bt.place(x= , y= )
 
-lb = Label (container, width=
+lb = Label (container, width=, height=, text=, font=)
 lb.place(x= , y= )
  
 
