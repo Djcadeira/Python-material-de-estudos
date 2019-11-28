@@ -3,16 +3,120 @@ O primeiro passo é importar a biblioteca: from tkinter import *
 para iniciar uma janela basta criar uma instancia para relacionar a janela depois fechar o loop.
 root = Tk()
 mainloop()
+
 O modulo tkinter é muito bem documentado todas as sintaxes podem ser encontradas em: https://effbot.org/tkinterbook/tkinter-index.htm
+Tkinter == TK INTERFACE
+Gui == Graphic User Inteface
+widget #é todo componente que compoem uma interface.
+Ex: Botoes , botoes com opçao, campos de texto.
 
-#===========================================
+Container # é todo componente que esta contido outro container.
+window #Se refere a arear retangular que recebe um widgets
+top-leve window #Janela independente, que se sobrepoem na janela principal.
+frame #é a unidade basica de organizaçao de layout complexos.
+child-parent #é o nome da relaçao entre Widget e seu container.
+
+
+pilares
+1 Gerenciamento de leyout
+2 Widget (componentes da tela)
+3 Eventos
+
+Gerenciadores de layout Posiciona os WIDGETS em resoluçoes diferentes.
+3 Gerenciadores
+place # os widgets sao dispostos em coordenadas em x e y. Facil(antigo) https://effbot.org/tkinterbook/place.htm
+pack # Empacota os widgets na horizontal ou verical. Nao usado https://effbot.org/tkinterbook/pack.htm
+grid # os widgets sao inseridos num sistema de celulas de uma tabela. https://effbot.org/tkinterbook/grid.htm
+
+Botão(Button) https://effbot.org/tkinterbook/button.htm
+Um botão simples, usado para executar um comando ou outra operação.
+
+Tela(Canvas) https://effbot.org/tkinterbook/canvas.htm
+Gráficos estruturados. Este widget pode ser usado para desenhar gráficos e plotagens, criar editores gráficos e implementar widgets personalizados.
+
+CheckButton(Checkbutton) https://effbot.org/tkinterbook/checkbutton.htm
+Representa uma variável que pode ter dois valores distintos. Clicar no botão alterna entre os valores.
+
+Entrada (Entry) https://effbot.org/tkinterbook/entry.htm
+Um campo de entrada de texto.
+
+Quadro (Frame) https://effbot.org/tkinterbook/frame.htm
+Um widget de contêiner. O quadro pode ter uma borda e um plano de fundo e é usado para agrupar outros widgets ao criar um layout de aplicativo ou caixa de diálogo.
+
+Rótulo (Label) https://effbot.org/tkinterbook/label.htm
+Exibe um texto ou uma imagem.
+
+Listbox https://effbot.org/tkinterbook/listbox.htm
+Exibe uma lista de alternativas. A caixa de listagem pode ser configurada para obter o comportamento de lista de verificação ou RadioButton.
+
+Menu https://effbot.org/tkinterbook/menu.htm
+Um painel de menu. Usado para implementar menus suspensos e pop-up.
+
+Menubutton https://effbot.org/tkinterbook/menubutton.htm
+Um menubutton. Usado para implementar menus suspensos.
+
+Mensagem(Message) https://effbot.org/tkinterbook/message.htm
+Exibir um texto. Semelhante ao widget de rótulo, mas pode quebrar automaticamente o texto para uma determinada largura ou proporção.
+
+Radiobutton 
+Representa um valor de uma variável que pode ter um dos muitos valores. Clicar no botão define a variável para esse valor e limpa todos os outros RadioButtons associados com a mesma variável.
+
+Escala(Scale)
+Permite que você defina um valor numérico arrastando um "slider".
+
+Scrollbar(scrollbar)
+Barras de rolagem padrão para uso com widgets de tela, entrada, caixa de listagem e texto.
+
+Texto(Text)
+Exibição de texto formatado. Permite que você exiba e edite texto com vários estilos e atributos. Também suporta imagens incorporadas e janelas.
+
+Toplevel
+Um widget de contêiner exibido como uma janela de nível superior separada.
+
+No Python 2,3 (TK 8,4), os seguintes widgets foram adicionados:
+
+Propriedade LabelFrame
+Uma variante do widget de quadro que pode desenhar uma borda e um título.
+
+Propriedade PanedWindow
+Um widget de contêiner que organiza widgets filho em painéis redimensionáveis.
+
+Campo incremental(Spinbox)
+Uma variante do widget de entrada para selecionar valores de um intervalo ou um conjunto ordenado.
+Observe também que não há nenhuma hierarquia de classe de widget em Tkinter; todas as classes de widgets são irmãos na árvore de herança.
+
+Todos esses widgets fornecem os métodos de gerenciamento misc e Geometry, os métodos de gerenciamento de configuração e métodos adicionais definidos pelo próprio widget. Além disso, a classe TopLevel também fornece a interface do Gerenciador de janelas. Isso significa que uma classe de widget típica fornece alguns métodos de 150.
+
+Mixins
+O módulo Tkinter fornece classes correspondentes aos vários tipos de widget em TK, e um número de Mixin e outras classes auxiliares (um Mixin é uma classe projetada para ser combinada com outras classes usando herança múltipla). Quando você usa Tkinter, você nunca deve acessar as classes Mixin diretamente.
+Mixins de implementação
+A classe misc é usada como Mixin pela janela raiz e classes de widget. Ele fornece um grande número de TK e serviços relacionados janela, que estão, portanto, disponíveis para todos os widgets do núcleo Tkinter. Isto é feito por delegação; o widget simplesmente encaminha a solicitação para o objeto interno apropriado.
+A classe WM é usada como Mixina pela janela raiz e classes de widget de TopLevel . Ele fornece serviços de Gerenciador de janelas, também por delegação.
+Usar uma delegação como essa simplifica o código do aplicativo: depois de ter um widget, você pode acessar todas as partes do Tkinter usando métodos na instância do widget.
+
+Mixins de geometria
+As classes Grid, Packe Place são usadas como mixins pelas classes widget. Eles fornecem acesso aos vários gerenciadores de geometria, também através de delegação.
+
+Grade (grid)
+O Gerenciador de geometria de grade permite que você crie layouts de tabela, organizando os widgets em uma grade de 2 dimensões. Para usar esse Gerenciador de geometria, use o método Grid .
+
+Pack
+O Gerenciador de geometria de pacote permite que você crie um layout "empacotando" os widgets em um widget pai, tratando-os como blocos retangulares colocados em um quadro. Para usar esse Gerenciador de geometria para um widget, use o método Pack nesse widget para configurar as coisas.
+
+Lugar (Place)
+O Gerenciador de geometria local permite que você coloque explicitamente um widget em uma determinada posição. Para usar esse Gerenciador de geometria, use o método Place .
+Gerenciamento de configuração de widgets
+A classe widget mistura a classe misc com os mixins de geometria e adiciona o gerenciamento de configuração por meio dos métodos CGET e Configure , bem como através de uma interface de dicionário parcial. O último pode ser usado para definir e consultar opções individuais, e é explicado em mais detalhes no próximo capítulo.
+
+Exemplos
+
 root = Tk() #Principal
-root.title('') #renomeia a janela
+root.title('') #Renomeia a janela
 root["bg"]ou["background"] = "green"
-root.geometry("300x300+") #largura x Altura + lX + tY os valores sao pixels
+root.geometry("300x300+") #largura x Altura + lX + tY os valores sao em pixels.
 
 
-root.mainloop() #Enquanto janela estiver sendo exibida.
+root.mainloop() #Loop para manter a janela aberta e executando ate o usuario fechar.
 #===========================================
 
 place == Lugar #Plano cartesiano
