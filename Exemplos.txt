@@ -1,0 +1,93 @@
+janela = Tk() #Principal
+Janela.title('') #renomeia a janela
+janela["bg"]ou["background"] = "green"
+janela.geometry("300x300+") #largura x Altura + lX + tY os valores sao pixels
+
+
+Janela.mainloop() #Enquanto janela estiver sendo exibida.
+#===========================================
+
+place == Lugar #Plano cartesiano
+janela = Tk()
+lb = Label(janela, text="fala galera")
+lb.place(x=250,y=250)
+janela.geometry("500x500+1000+10")
+
+mainloop()
+
+#===========================================
+
+bt = Button (container, width= , command= )
+bt.place(x= , y= )
+
+lb = Label (container, width=
+lb.place(x= , y= )
+ 
+
+def bt_click():
+    print('bt_click')
+    lb['text'] = 'Funcionou'
+
+
+
+janela = Tk()
+janela.title('Menu')
+
+bt = Button(janela, width=20, text="ok", command=bt_click)
+bt.place(x=100, y=150)
+
+lb = Label(janela, text="Teste")
+lb.place(x=150, y=100)
+
+janela.geometry('300x300+1000+100')
+
+janela.mainloop()
+#===========================================
+Exemplo com Retornando o Text do butao
+
+from functools import partial #envia parametros
+from tkinter import *
+
+def butao_click(butao): #Recebe um parametro do partial
+    print(butao['text']) #butao['text'] significa que vai ler apenas o que esta dentro do texto.
+
+janela = Tk()
+janela.title('Janela principal')
+
+bt = Button(janela, width=20, text='Confirmado')
+bt['command'] = partial(butao_click, bt)
+bt.place(x=100 , y=100)
+
+bt2 = Button(janela, width=20, text='Negado')
+bt2['command'] = partial(butao_click, bt2)
+bt2.place(x=100 , y=130)
+
+janela["background"] = "black"
+janela.geometry("300x300")
+#===========================================
+from functools import partial
+from tkinter import *
+
+
+def bt_click():
+    print(input.get())
+    lb['text'] = input.get()
+
+
+janela = Tk()
+janela.title('interface')
+janela.geometry('300x300+1000+100')
+
+input = Entry(janela)
+input.place(x=110, y=100)
+
+lb = Label(janela, width=20 ,text=' ')
+lb.place(x=100, y=80)
+
+bt = Button(janela, width=20, text='Confirmar', command=bt_click)
+bt.place(x=100, y=130)
+
+
+janela.mainloop()
+print('Janela finalizada')
+
