@@ -1,0 +1,13 @@
+Cores
+
+Padrao ANSI
+
+\033[STYLE TEXT BACK m
+
+STYLE [0 sem estilo][1 negrito][4 sublinhado][7 inverte as cores]
+TEXT [30 branco] [31 vermelho] [32 verde] [33 amarelo] [34 azul] [35 magenta] [36 azul claro] [37 cinza]
+BACK [40 branco] [41 vermelho] [42 verde] [43 amarelo] [44 azul] [45 magenta] [46 azul claro] [47 cinza]
+
+					CORES 
+
+0 BRANCO, 1 vermelho, 2 VERDE, 3 AMARELO, 4 AZUL, 5 MAGENTA, 6 AZUL CLARO, 7 CINZA

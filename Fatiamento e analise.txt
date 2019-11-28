@@ -1,0 +1,31 @@
+[x:y:z]
+x começo
+y final (A o numero final é descartando)
+z pular de quantos em quantos
+
+len (Analise de letras)
+len(variavel) (vai detectar quantas caracteres tem na frase)
+
+variavel.count('o') #Detecta quantas letras 'o' tem na frase
+pode ser incluido o fatiamento usando virgula variavel.count('o',y,z)
+
+variavel.find ('rco') #Procura onde pode ser achado 'rco' na frase
+caso for encontrado o valor -1 significa que nao existe.
+
+'curso' in variavel #verifica se existe a frase na variavel
+
+variavel.replace('Python', 'android') # subistitui a palavra existente por uma palavra nova
+caso queira que replace seja permanete pode adicionar da seguinte forma.
+frase = variavel.replace('Python', 'android')
+
+variavel.upper() #Deixa a variavel tudo em MAIUSCULO
+variavel.lower() #Deixa a variavel tudo em minusculo
+variavel.capitalize() # Deixa apenas a primeira letra Maiuscula
+variavel.title() #Capitaliza todas as palavras de uma frase
+variavel.strip() #Remove espaços vazios, seja no começo ou no final.
+variavel. r strip() #Remove apenas os espaços da direita.
+variavel. l strip() #Remove apenas os espaços da esquerda.
+
+variavel.split() #divide os espaços vazios.
+'-'.join(variavel) #junta todas as frases com o que estiver dentro das aspas'
+variavel.append('') #adiciona mais um valor a lista
